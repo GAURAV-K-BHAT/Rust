@@ -6,7 +6,7 @@ fn main() {
     println!(" guess the number ! ");
     let secrate_number = rand::thread_rng().gen_range(1..=100);
     loop {
-            println!("The secrate number is {secrate_number}");
+            // println!("The secrate number is {secrate_number}");
             println!(" Please Enter the number : ");
 
             let mut guess = String::new();
