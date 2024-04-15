@@ -1,13 +1,14 @@
 use std::io;
 use rand::Rng;
 use std::cmp::Ordering;
+use colored::*;
 
 fn main() {
     println!(" guess the number ! ");
     let secrate_number = rand::thread_rng().gen_range(1..=100);
     loop {
             // println!("The secrate number is {secrate_number}");
-            println!(" Please Enter the number : ");
+            println!( "{}","Please Enter the number ...".trim().on_white().bold());
 
             let mut guess = String::new();
 
@@ -23,10 +24,10 @@ fn main() {
                 println!(" Your Guessed Number Is : {guess}");
 
                 match guess.cmp(&secrate_number){
-                    Ordering::Less => println!("Input Is Low "),
-                    Ordering::Greater => println! ("Input Is High"),
+                    Ordering::Less => println!("{}","Input Is Low ".on_yellow()),
+                    Ordering::Greater => println! ("{}","Input Is High".on_red()),
                     Ordering::Equal => {
-                        println!("Congratulations You Won !!! "); 
+                        println!("{}","Congratulations You Won !!! " .on_green().green().italic().bold()); 
                         break;
                     }
 
